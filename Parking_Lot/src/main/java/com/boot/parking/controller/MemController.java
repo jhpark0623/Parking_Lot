@@ -43,6 +43,8 @@ public class MemController {
 		PrintWriter out = response.getWriter();
 
 		Member login = this.mapper.login(mem_id, mem_pwd);
+		
+		System.out.println(login);
 
 		if (login != null) {
 			session.setAttribute("loginMember", login);
@@ -55,7 +57,7 @@ public class MemController {
 			if (storeCode == 0) {
 				out.println("location.href='/admin_main.go';");
 			} else {
-				out.println("location.href='/store_main.go?storeCode=" + storeCode + "';");
+				out.println("location.href='/store_main.go';");
 			}
 
 			out.println("</script>");
@@ -93,13 +95,13 @@ public class MemController {
 	}
 
 	@GetMapping("/store_main.go")
-	public String storeMain(@RequestParam("storeCode") int storeCode, HttpSession session) {
+	public String storeMain(HttpSession session) {
 		Member loginMember = (Member) session.getAttribute("loginMember");
-		if (loginMember == null || loginMember.getStore_code() != storeCode) {
+		if (loginMember == null) {
 			return "redirect:/admin_login.go";
 		}
 
-		session.setAttribute("storeCode", storeCode);
+//		session.setAttribute("storeCode", loginMember.getStore_name());
 
 		return "store/store_main";
 	}

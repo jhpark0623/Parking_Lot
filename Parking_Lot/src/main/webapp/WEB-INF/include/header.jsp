@@ -59,10 +59,10 @@ a:hover {
 	<div class="body_div">
 		<c:choose>
 			<c:when test="${sessionScope.loginMember.store_code == 0}">
-				<a href="<%=request.getContextPath()%>/admin_main.go">header</a>
+				<a href="<%=request.getContextPath()%>/admin_main.go">Main</a>
 			</c:when>
 			<c:when test="${sessionScope.loginMember.store_code > 0}">
-				<a href="<%=request.getContextPath()%>/store_page.go">header</a>
+				<a href="<%=request.getContextPath()%>/store_page.go">Main</a>
 			</c:when>
 			<c:otherwise>
 				<a href="<%=request.getContextPath()%>/">header</a>
@@ -70,10 +70,10 @@ a:hover {
 		</c:choose>
 
 		<div>
-			<button class="btn btn-secondary"
+			<button class="btn btn-info"
 				onclick="location.href='<%=request.getContextPath()%>/parking_in.go?floor=1'">입차</button>
-				
-			<button class="btn btn-secondary"
+
+			<button class="btn btn-info"
 				onclick="location.href='<%=request.getContextPath()%>/parking_out.go'">출차</button>
 		</div>
 
@@ -83,7 +83,10 @@ a:hover {
 					<a href="<%=request.getContextPath()%>/admin_login.go">로그인</a>
 				</c:when>
 				<c:otherwise>
-					<a href="<%=request.getContextPath()%>/admin_logout.go">로그아웃</a>
+					<div style="display: flex;">
+						<div>${sessionScope.loginMember.mem_id }</div>
+						<a href="<%=request.getContextPath()%>/admin_logout.go">로그아웃</a>
+					</div>
 				</c:otherwise>
 			</c:choose>
 		</div>

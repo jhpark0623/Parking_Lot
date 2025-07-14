@@ -8,10 +8,10 @@
 
 	<select id="login" parameterType="map" resultType="member">
 
-		select *
-		from mem
-		where mem_id = #{mem_id}
-		and mem_pwd = #{mem_pwd}
+		select m.*, a.store_name
+		from mem m left join admin a on m.store_code = a. store_code
+		where m.mem_id = #{mem_id}
+		and m.mem_pwd = #{mem_pwd}
 	</select>
 
 </mapper>

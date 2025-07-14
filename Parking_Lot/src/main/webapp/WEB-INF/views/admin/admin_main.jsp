@@ -20,15 +20,15 @@
 
 		<div style="display: flex; justify-content: center; gap: 20px;">
 			<!-- 주차 정산 페이지 이동 버튼 -->
-			<button class="btn btn-secondary"
+			<button class="btn btn-info"
 				onclick="location.href='<%=request.getContextPath()%>/parking_out.go'">주차
 				정산 이동</button>
 
-			<button class="btn btn-secondary"
+			<button class="btn btn-info"
 				onclick="location.href='<%=request.getContextPath()%>/pk_list.go'">주차장
 				사용 내역</button>
 
-			<button class="btn btn-secondary"
+			<button class="btn btn-info"
 				onclick="location.href='<%=request.getContextPath()%>/pk_now.go'">주차장
 				현황</button>
 		</div>
