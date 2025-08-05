@@ -49,7 +49,15 @@
 										<td>${dto.car_num }</td>
 										<td>${dto.in_time }</td>
 										<td>${dto.out_time }</td>
-										<td>${dto.amount }원</td>
+										
+										<c:if test="${!empty dto.out_time }">
+											<td>${dto.amount }원</td>
+										</c:if>
+										
+										<c:if test="${empty dto.out_time }">
+											<td></td>
+										</c:if>
+										
 									</tr>
 								</c:forEach>
 							</c:if>
@@ -70,10 +78,10 @@
 						<c:forEach begin="${paging.startBlock }" end="${paging.endBlock }" var="i">
 							<c:choose>
 								<c:when test="${i == paging.page }">
-									<a class="btn btn-primary btn-sm disabled">${i }</a>
+									<a class="btn btn-primary btn-sm">${i }</a>
 								</c:when>
 								<c:otherwise>
-									<a class="btn btn-primary btn-sm"
+									<a class="btn btn-outline-primary btn-sm"
 										href="<%=request.getContextPath()%>/pk_list.go?page=${i }">${i }</a>
 								</c:otherwise>
 							</c:choose>
@@ -87,6 +95,8 @@
 						</c:if>
 					</div>
 				</div>
+				
+				<div class="mb-3"></div>
 
 				<!-- 검색 영역 -->
 				<div style="height: 50px">
