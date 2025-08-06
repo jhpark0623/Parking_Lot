@@ -44,8 +44,8 @@ public class MakeRandomCarnum {
 		// 1-2. 중간 한글
 		String kor1 = kor[rand.nextInt(kor.length)];
 	
-		// 1-3. 뒷번호 - 0100 ~ 9999
-		int num2 = (int) (Math.random() * 9900) + 100;
+		// 1-3. 뒷번호 - 0001 ~ 9999
+		int num2 = (int) (Math.random() * 9999) + 1;
 		
 		if(num1 > 100) {
 			bun = String.format("%03d", num1) + kor1 + " " + String.format("%04d", num2);
