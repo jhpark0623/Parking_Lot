@@ -186,7 +186,7 @@ h1 {
     const amount = ${amount.amount}; // 서버에서 전달받은 결제금액
 
     // 결제 금액이 0원이면 바로 출차 처리
-      if (true) {
+      if (amount == 0) {
       alert("무료 주차입니다. 출차를 진행합니다.");
 
       const form = document.createElement("form");
