@@ -302,7 +302,12 @@ public class ParkingController {
 
 		// 요금 계산 (10분당 500원)
 		long minutes = Duration.between(inTime, now).toMinutes();
-		int price = (int) (Math.floor(minutes / 10.0) * 500);
+
+		int dcMinutes = pking.getDc_time();
+
+		long amountTime = minutes - dcMinutes;
+
+		int price = (int) (Math.floor(amountTime / 10.0) * 500);
 		// amount 객체 만들기 (아직 DB에 저장 X)
 		Amount amount = new Amount();
 		amount.setParking_id(pking.getPid());
