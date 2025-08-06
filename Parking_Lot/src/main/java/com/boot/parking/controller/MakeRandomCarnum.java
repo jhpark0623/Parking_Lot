@@ -33,13 +33,7 @@ public class MakeRandomCarnum {
 		
 		
 		// 1-1. 앞번호 - 01 ~ 699
-		int ran1 = (int)(Math.random() * 699) + 1;
-		
-		String num = Integer.toString(ran1);
-		String string1 = num.replaceFirst("^0+", "");
-		int num1 = Integer.parseInt(string1);
-		
-		// System.out.println(num1);
+		int num1 = (int)(Math.random() * 699) + 1;
 	
 		// 1-2. 중간 한글
 		String kor1 = kor[rand.nextInt(kor.length)];
