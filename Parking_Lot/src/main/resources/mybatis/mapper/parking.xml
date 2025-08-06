@@ -9,7 +9,7 @@
 
 	<!-- 차량 번호판 생성 시 잘못된 데이터 필터 -->
 	<select id="checkDupl" parameterType="String"
-		resultType="parking">
+		resultType="parking">	
 		select * from parking
 		where car_num = #{car_num}
 		and state =
@@ -104,7 +104,7 @@
 	<!-- 주차된 차량 조회(전체 번호로 조회하여 특정 차량 한 대만 출력) -->
 	<select id="pcar" parameterType="String" resultType="parking">
 		select *
-		from parking where car_num = #{cnum}
+		from parking where car_num = #{cnum} AND state = 'Y'
 	</select>
 
 	<!-- 주차 요금 정산 정보 저장 -->

@@ -106,8 +106,9 @@ table thead, table tbody tr {
 
 		<form method="post"
 			action="<%=request.getContextPath()%>/parking_search.go">
-			<input name="keyword"> <input type="submit" value="검색">
-			<button class="re" onclick="location.href='parking_out.go'">다시검색</button>
+			<input name="keyword"> 
+			<input type="submit" value="검색">
+			<button type="button" class="re" onclick="location.href='parking_out.go'">다시검색</button>
 		</form>
 		<br> <br>
 

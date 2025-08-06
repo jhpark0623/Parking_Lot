@@ -19,14 +19,14 @@
 	margin: 0 auto;
 }
 
-/* 검색 입력창 스타일 */
+
 input {
 	border-radius: 50px;
 	padding: 5px 10px;
 	font-size: 18px;
 }
 
-/* 검색 버튼 스타일 */
+
 input[type="submit"] {
 	background-color: #0d6efd;
 	color: #fff;
@@ -35,7 +35,7 @@ input[type="submit"] {
 	cursor: pointer;
 }
 
-/* 검색 버튼 hover 효과 */
+
 input[type="submit"]:hover {
 	background-color: #0a58ca;
 	transform: translateY(-2px);
